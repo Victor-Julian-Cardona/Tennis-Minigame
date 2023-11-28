@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Tennis Minigame</title>
+</head>
+<body>
+    <main>
+        <div id="title-screen">
+            <img src="images/title-screen.png" alt="" class="logo-img" id = "title-screen" />
+            <br />
+            <button id="start-button">Start Game</button>
+            <p>Use the left and right arrow to control your player and space to hit the ball.</p>
+        </div>
+
+        <div id="game-container">
+            <div class="containers" id="stats-container">
+                <h2>Stats</h2>
+                <p>Player: <span id="Pscore">0</span></p>
+                <p>Opponent: <span id="Oscore">0</span></p>
+            </div>
+            <!-- #game-screen is initially hidden using CSS style display: none -->
+            <div id="game-screen">
+                <img src="images/tennis-court.png" alt="" class="tennis-court" />
+            </div>
+            <!-- </canvas> -->
+        </div>
+    
+        <!-- #game-end is initially hidden using CSS style display: none -->
+        <div id="end-screen">
+            <img src="" alt="" class="logo-img" />
+            <h1>Game Over</h1>
+            <br />
+            <p id="end-message"></p>
+            <br />
+            <button id="restart-button">Restart</button>
+        </div>
+
+
+    </main>
+
+    <script type="text/javascript" src="js/ball.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    
+</body>
+</html>
