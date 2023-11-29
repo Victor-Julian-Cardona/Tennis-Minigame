@@ -3,6 +3,8 @@ window.onload = function () {
     const restartButton = document.getElementById("restart-button");
     const defeatImage = document.getElementById("defeat")
     const victoryImage = document.getElementById("victory")
+    const pScoreElement = document.getElementById("Pscore")
+    const oScoreElement = document.getElementById("Oscore")
 
     let game
 
@@ -14,6 +16,8 @@ window.onload = function () {
     restartButton.addEventListener("click", function () {
       victoryImage.style.display = 'none'
       defeatImage.style.display = 'none'
+      pScoreElement.innerHTML = '0'
+      oScoreElement.innerHTML = '0'
         game = new Game()
         startGame();
     });
