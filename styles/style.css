@@ -50,6 +50,8 @@ main {
 
 #end-screen {
     display: none;
+    align-items: center;
+    flex-direction: column;
 }
 
 #stats-container {
@@ -60,4 +62,24 @@ main {
     position: absolute;
     background-color: black;
     z-index: 10;
+}
+
+#restart-button {
+    background-color: greenyellow;
+    border-radius: 10px;
+    height: 4rem;
+    width: 8rem;
+    font-size: 1rem;
+    color: blue;
+    border-style: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 1rem;
+}
+
+#victory {
+    display: none;
+}
+
+#defeat {
+    display: block;
 }

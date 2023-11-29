@@ -1,6 +1,8 @@
 window.onload = function () {
     const startButton = document.getElementById("start-button");
     const restartButton = document.getElementById("restart-button");
+    const defeatImage = document.getElementById("defeat")
+    const victoryImage = document.getElementById("victory")
 
     let game
 
@@ -10,6 +12,8 @@ window.onload = function () {
     });
 
     restartButton.addEventListener("click", function () {
+      victoryImage.style.display = 'none'
+      defeatImage.style.display = 'none'
         game = new Game()
         startGame();
     });
@@ -21,7 +25,9 @@ window.onload = function () {
 
 
     document.addEventListener('keydown', (e) => {
-      
+
+      if (game) {
+
         if (e.key === 'ArrowLeft') {
           if (game.player.directionX > -4) {
             game.player.directionX -= 1
@@ -34,15 +40,16 @@ window.onload = function () {
             game.player.directionX += 1
           }
         }
-
+  
         if (e.key === ' ') {
           if (game.ball.directionY == 0) {
             game.ball.serveBall()
           }
-          if (game.ball.directionY == 1) {
-            game.ball.checkShot()
-          }
         }
+
+
+      }
+      
   
   
       })

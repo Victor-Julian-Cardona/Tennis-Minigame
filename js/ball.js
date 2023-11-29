@@ -6,10 +6,10 @@ class Ball {
         this.opponent = opponent
         this.side = side
         if (this.side == 'deuce') {
-            this.left = 785
+            this.left = 765
         }
         else {
-            this.left = 425
+            this.left = 435
         }
         this.top = 560
         this.width = 35
@@ -26,7 +26,7 @@ class Ball {
         this.element.style.backgroundColor = 'black'
         this.element.style.borderRadius = "50%"
         this.gameScreen.appendChild(this.element)
-        this.swung = false
+        this.isOut = false
     }
 
     move() {
@@ -53,14 +53,14 @@ class Ball {
             ) {
             this.top += 10
             this.directionY *= -1
-            this.swung = false
+            //this.swung = false
             if (ball.left < opponent.left + opponent.width/2) {
                 this.directionX = -0.4
             } else {
                 this.directionX = 0.4
             }
 
-            this.courtSide = 'opponent'
+            //this.courtSide = 'opponent'
 
             // this.directionX *= -1
             console.log("PASSED****")
@@ -73,14 +73,22 @@ class Ball {
             ) {
             this.top -= 10
             this.directionY *= -1
-            this.swung = true
+            //this.swung = true
             if (ball.left < player.left + player.width/2) {
                 this.directionX = -0.4
+                if (ball.left < 600) {
+                    console.log('out left')
+                    this.isOut = true
+                }
             } else {
                 this.directionX = 0.4
+                if (ball.left > 600) {
+                    console.log('out right')
+                    this.isOut = true
+                }
             }
 
-            this.courtSide = 'player'
+            //this.courtSide = 'player'
 
             // this.directionX *= -1
             console.log("PASSED****")
@@ -92,11 +100,11 @@ class Ball {
 
     serveBall() {
         if (this.side == 'deuce') {
-            this.directionX = -.6
+            this.directionX = -.4
             this.directionY = -1
         }
         else {
-            this.directionX = .6
+            this.directionX = .4
             this.directionY = -1
         }
     }
