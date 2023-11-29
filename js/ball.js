@@ -82,7 +82,7 @@ class Ball {
                 }
             } else {
                 this.directionX = 0.4
-                if (ball.left > 600) {
+                if (ball.left > 700) {
                     console.log('out right')
                     this.isOut = true
                 }
